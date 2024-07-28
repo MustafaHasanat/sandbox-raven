@@ -1,10 +1,12 @@
 import { MailerModule } from "@nestjs-modules/mailer";
+import { S3Module } from "./schemas/aws/aws.module";
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { UsersModule } from "./schemas/users/users.module";
 import { RolesModule } from "./schemas/roles/roles.module";
 import { PermissionsModule } from "./schemas/permissions/permissions.module";
+import { AuthModule } from "./schemas/auth/auth.module";
 import { AuthGuard, PermissionGuard } from "./common/guards";
 import { APP_GUARD } from "@nestjs/core";
 import { TypeOrmModule } from "@nestjs/typeorm";
@@ -12,8 +14,6 @@ import { Permission, Role } from "./entities";
 import { JwtModule } from "@nestjs/jwt";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import entities from "./entities/entities";
-import { S3Module } from "./schemas/aws/aws.module";
-import { AuthModule } from "./schemas/auth/auth.module";
 
 @Module({
     imports: [
@@ -34,6 +34,7 @@ import { AuthModule } from "./schemas/auth/auth.module";
             }),
             inject: [ConfigService],
         }),
+
         // ===== tables =====
         // --- base tables (never delete them) ---
         RolesModule,

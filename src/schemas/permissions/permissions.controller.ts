@@ -66,7 +66,7 @@ export class PermissionsController {
     @Post()
     @EditorsWrapper(CreatePermissionDto, "create a new permission")
     async createPermission(
-        @Body(new POST_PATCH_Pipe(TablesNames.PRODUCTS))
+        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
         createPermissionDto: CreatePermissionDto,
         @Res() res: Response
     ) {
@@ -80,7 +80,7 @@ export class PermissionsController {
     @EditorsWrapper(UpdatePermissionDto, "update a permission")
     async updatePermission(
         @Param("id") id: string,
-        @Body(new POST_PATCH_Pipe(TablesNames.PRODUCTS))
+        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
         updatePermissionDto: UpdatePermissionDto,
         @Res() res: Response
     ) {

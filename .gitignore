@@ -1,4 +1,5 @@
 memo.json
+.env
 
 # compiled output
 /dist
