@@ -28,7 +28,7 @@ import { UpdateRoleDto } from "../../common/dto/roles/update-role.dto";
 import { DeletionQuery } from "src/common/decorators/delete.decorator";
 import { getUserTokenData } from "src/common/helpers";
 
-@ControllerWrapper("roles")
+@ControllerWrapper("role")
 export class RolesController {
     constructor(private readonly rolesService: RolesService) {}
 
@@ -61,7 +61,7 @@ export class RolesController {
     @Post()
     @EditorsWrapper(CreateRoleDto, "create a new role")
     async createRole(
-        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
+        @Body(new POST_PATCH_Pipe(TablesNames.ROLE))
         createRoleDto: CreateRoleDto,
         @Req() req: Request,
         @Res() res: Response
@@ -79,7 +79,7 @@ export class RolesController {
     @EditorsWrapper(UpdateRoleDto, "update a role")
     async updateRole(
         @Param("id") id: string,
-        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
+        @Body(new POST_PATCH_Pipe(TablesNames.ROLE))
         updateRoleDto: UpdateRoleDto,
         @Res() res: Response
     ) {

@@ -28,7 +28,7 @@ import { UpdatePermissionDto } from "../../common/dto/permissions/update-permiss
 import { DeletionQuery } from "src/common/decorators/delete.decorator";
 import { getUserTokenData } from "src/common/helpers";
 
-@ControllerWrapper("permissions")
+@ControllerWrapper("permission")
 export class PermissionsController {
     constructor(private readonly permissionsService: PermissionsService) {}
 
@@ -66,7 +66,7 @@ export class PermissionsController {
     @Post()
     @EditorsWrapper(CreatePermissionDto, "create a new permission")
     async createPermission(
-        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
+        @Body(new POST_PATCH_Pipe(TablesNames.PERMISSION))
         createPermissionDto: CreatePermissionDto,
         @Res() res: Response
     ) {
@@ -80,7 +80,7 @@ export class PermissionsController {
     @EditorsWrapper(UpdatePermissionDto, "update a permission")
     async updatePermission(
         @Param("id") id: string,
-        @Body(new POST_PATCH_Pipe(TablesNames.ROLES))
+        @Body(new POST_PATCH_Pipe(TablesNames.PERMISSION))
         updatePermissionDto: UpdatePermissionDto,
         @Res() res: Response
     ) {

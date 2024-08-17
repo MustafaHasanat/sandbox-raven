@@ -28,7 +28,7 @@ import { RELATIONS_OBJECT } from "../../common/constants/relations";
 import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../common/pipes";
 import { getUserTokenData } from "../../common/helpers";
 
-@ControllerWrapper("users")
+@ControllerWrapper("user")
 export class UsersController {
     constructor(private readonly usersService: UsersService) {}
 
@@ -62,7 +62,7 @@ export class UsersController {
     @Post()
     @EditorsWrapper(CreateUserDto, "create a new user")
     async createUser(
-        @Body(new POST_PATCH_Pipe(TablesNames.USERS))
+        @Body(new POST_PATCH_Pipe(TablesNames.USER))
         createUserDto: CreateUserDto,
         @Req() req: Request,
         @Res() res: Response
@@ -80,7 +80,7 @@ export class UsersController {
     @EditorsWrapper(UpdateUserDto, "update a user")
     async updateUser(
         @Param("id") id: string,
-        @Body(new POST_PATCH_Pipe(TablesNames.USERS))
+        @Body(new POST_PATCH_Pipe(TablesNames.USER))
         updateUserDto: UpdateUserDto,
         @Req() req: Request,
         @Res() res: Response

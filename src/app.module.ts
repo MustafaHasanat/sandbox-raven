@@ -55,7 +55,6 @@ import entities from "./entities/entities";
                 },
             },
         }),
-
         // --- AWS-S3 ---
         S3Module,
         // --- jwt ---

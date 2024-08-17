@@ -42,11 +42,6 @@ export class AuthGuard implements CanActivate {
             // pass the payload object to the request under the name 'user' so we can check for the
             // user's info anywhere in the app
             request["user"] = payload;
-
-            // // get the user using its ID if the token exists, otherwise pass a nullable value
-            // const user: { payload: User } = payload
-            //     ? await this.usersService.getUserById(payload?.userId)
-            //     : { payload: null };
         } catch (error) {
             throw new BadRequestException({
                 message: "Unexpected error occurred",

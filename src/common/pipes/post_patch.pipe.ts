@@ -18,9 +18,9 @@ type TransformerMappingType = {
 };
 
 const tablesTransformers: { [tableName: string]: NewInstanceTransformer } = {
-    users: {},
-    roles: {},
-    permissions: {},
+    user: {},
+    role: {},
+    permission: {},
 };
 
 @Injectable()
@@ -56,6 +56,7 @@ export class POST_PATCH_Pipe implements PipeTransform<any> {
 
         // transform string data according to the mapping object
         const transformedData = structuredClone(filteredData);
+
         Object.entries(filteredData).map(([key, value]) => {
             if (Object.keys(this.transformer).includes(key)) {
                 transformedData[key] =
