@@ -1,3 +1,4 @@
+import { ProductsModule } from "./schemas/products/products.module";
 import { MailerModule } from "@nestjs-modules/mailer";
 import { S3Module } from "./schemas/aws/aws.module";
 import { Module } from "@nestjs/common";
@@ -41,6 +42,7 @@ import entities from "./entities/entities";
         PermissionsModule,
         UsersModule,
         // --- app tables ---
+        ProductsModule,
         // --- app repositories ---
         TypeOrmModule.forFeature([Role]),
         TypeOrmModule.forFeature([Permission]),

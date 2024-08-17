@@ -18,6 +18,7 @@ type TransformerMappingType = {
 };
 
 const tablesTransformers: { [tableName: string]: NewInstanceTransformer } = {
+    product: {},
     user: {},
     role: {},
     permission: {},

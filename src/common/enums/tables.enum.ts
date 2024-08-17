@@ -1,3 +1,9 @@
+export enum ProductFields {
+    ID = "id",
+    CREATED_AT = "createdAt",
+    UPDATED_AT = "updatedAt",
+}
+
 export enum RoleFields {
     ID = "id",
     NAME = "name",
@@ -25,6 +31,7 @@ export enum UserFields {
 }
 
 export enum TablesNames {
+    PRODUCT = "product",
     USER = "user",
     ROLE = "role",
     PERMISSION = "permission",
@@ -33,6 +40,7 @@ export enum TablesNames {
 }
 
 export type AllTablesColumns =
+    | ProductFields
     | RoleFields
     | PermissionFields
     | UserFields;
