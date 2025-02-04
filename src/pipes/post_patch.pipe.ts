@@ -6,8 +6,8 @@ import {
 } from "@nestjs/common";
 import { validate } from "class-validator";
 import { plainToInstance } from "class-transformer";
-import { NewInstanceTransformer } from "../../common/types";
-import { filterNullsObject } from "../../common/middlewares";
+import { NewInstanceTransformer } from "../types";
+import { filterNullsObject } from "../middlewares";
 import { TablesNames } from "../enums/tables.enum";
 
 type TransformerMappingType = {
@@ -18,7 +18,6 @@ type TransformerMappingType = {
 };
 
 const tablesTransformers: { [tableName: string]: NewInstanceTransformer } = {
-    product: {},
     user: {},
     role: {},
     permission: {},
@@ -57,7 +56,6 @@ export class POST_PATCH_Pipe implements PipeTransform<any> {
 
         // transform string data according to the mapping object
         const transformedData = structuredClone(filteredData);
-
         Object.entries(filteredData).map(([key, value]) => {
             if (Object.keys(this.transformer).includes(key)) {
                 transformedData[key] =

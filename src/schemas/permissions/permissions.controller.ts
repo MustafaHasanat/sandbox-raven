@@ -17,16 +17,16 @@ import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
-} from "../../common/decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../common/types";
-import { PermissionFields, TablesNames } from "../../common/enums/tables.enum";
-import { RELATIONS_OBJECT } from "../../common/constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../common/pipes";
+} from "../../decorators";
+import { CustomResponseType, DeleteQueryProps } from "../../types";
+import { PermissionFields, TablesNames } from "../../enums/tables.enum";
+import { RELATIONS_OBJECT } from "../../constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
 import { Permission } from "../../entities/permission.entity";
-import { CreatePermissionDto } from "../../common/dto/permissions/create-permission.dto";
-import { UpdatePermissionDto } from "../../common/dto/permissions/update-permission.dto";
-import { DeletionQuery } from "src/common/decorators/delete.decorator";
-import { getUserTokenData } from "src/common/helpers";
+import { CreatePermissionDto } from "../../dto/permissions/create-permission.dto";
+import { UpdatePermissionDto } from "../../dto/permissions/update-permission.dto";
+import { DeletionQuery } from "src/decorators/delete.decorator";
+import { getUserTokenData } from "src/helpers";
 
 @ControllerWrapper("permission")
 export class PermissionsController {

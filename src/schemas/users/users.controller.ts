@@ -13,20 +13,20 @@ import { DeleteResult, FindManyOptions, UpdateResult } from "typeorm";
 import { Request, Response } from "express";
 import { User } from "../../entities/user.entity";
 import { UsersService } from "./users.service";
-import { CreateUserDto } from "../../common/dto/users/create-user.dto";
-import { UpdateUserDto } from "../../common/dto/users/update-user.dto";
-import { TablesNames, UserFields } from "../../common/enums/tables.enum";
+import { CreateUserDto } from "../../dto/users/create-user.dto";
+import { UpdateUserDto } from "../../dto/users/update-user.dto";
+import { TablesNames, UserFields } from "../../enums/tables.enum";
 import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
     DeletionQuery,
     GetOneByQuery,
-} from "../../common/decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../common/types";
-import { RELATIONS_OBJECT } from "../../common/constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../common/pipes";
-import { getUserTokenData } from "../../common/helpers";
+} from "../../decorators";
+import { CustomResponseType, DeleteQueryProps } from "../../types";
+import { RELATIONS_OBJECT } from "../../constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
+import { getUserTokenData } from "../../helpers";
 
 @ControllerWrapper("user")
 export class UsersController {

@@ -13,8 +13,8 @@ import {
     CustomResponseType,
     FullTokenPayload,
     DeleteQueryProps,
-} from "../../common/types";
-import { UserRole } from "../../common/enums/users.enum";
+} from "../../types";
+import { UserRole } from "../../enums/users.enum";
 import {
     errorRes,
     forbiddenRes,
@@ -22,16 +22,16 @@ import {
     newInstanceRes,
     notFoundRes,
     updatedRes,
-} from "../../common/responses";
-import { CreateUserDto } from "../../common/dto/users/create-user.dto";
-import { UpdateUserDto } from "../../common/dto/users/update-user.dto";
+} from "../../responses";
+import { CreateUserDto } from "../../dto/users/create-user.dto";
+import { UpdateUserDto } from "../../dto/users/update-user.dto";
 import {
     createHandler,
     deleteHandler,
     getAllHandler,
     getByIdHandler,
     updateHandler,
-} from "../../common/helpers";
+} from "../../helpers";
 
 @Injectable()
 export class UsersService {

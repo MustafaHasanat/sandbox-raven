@@ -11,11 +11,11 @@ import {
 } from "@nestjs/common";
 import { ApiBody, ApiOperation } from "@nestjs/swagger";
 import { Request, Response } from "express";
-import { LoginUserDto } from "../../common/dto/users/login-user.dto";
+import { LoginUserDto } from "../../dto/users/login-user.dto";
 import { UsersService } from "../users/users.service";
 import { AuthService } from "./auth.service";
-import { ControllerWrapper } from "../../common/decorators";
-import { getUserTokenData } from "../../common/helpers";
+import { ControllerWrapper } from "../../decorators";
+import { getUserTokenData } from "../../helpers";
 
 @ControllerWrapper("auth")
 export class AuthController {

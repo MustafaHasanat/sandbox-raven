@@ -10,17 +10,17 @@ import {
     CustomResponseType,
     DeleteQueryProps,
     FullTokenPayload,
-} from "../../common/types";
-import { errorRes, newInstanceRes, updatedRes } from "../../common/responses";
-import { CreatePermissionDto } from "../../common/dto/permissions/create-permission.dto";
-import { UpdatePermissionDto } from "../../common/dto/permissions/update-permission.dto";
+} from "../../types";
+import { errorRes, newInstanceRes, updatedRes } from "../../responses";
+import { CreatePermissionDto } from "../../dto/permissions/create-permission.dto";
+import { UpdatePermissionDto } from "../../dto/permissions/update-permission.dto";
 import {
     createHandler,
     deleteHandler,
     getAllHandler,
     getByIdHandler,
     updateHandler,
-} from "../../common/helpers";
+} from "../../helpers";
 import { Permission } from "../../entities";
 
 @Injectable()

@@ -8,7 +8,7 @@ import {
     NotImplementedException,
 } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Permission, Role } from "../../entities";
+import { Permission, Role } from "../entities";
 import { In, Repository } from "typeorm";
 import { PermissionAction } from "../enums/permissions.enum";
 import { TablesNames } from "../enums/tables.enum";

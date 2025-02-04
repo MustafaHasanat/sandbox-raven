@@ -5,15 +5,13 @@ type RelationsListing = {
     manyToMany: string[];
 };
 
-type Tables<T> = { product: T; role: T; permission: T; user: T };
+type Tables<T> = {
+    role: T;
+    permission: T;
+    user: T;
+};
 
 const RELATIONS: Tables<RelationsListing> = {
-    product: {
-        oneToOne: [],
-        oneToMany: [],
-        manyToOne: [],
-        manyToMany: [],
-    },
     role: {
         oneToOne: [],
         oneToMany: ["permissions"],
@@ -39,17 +37,6 @@ export const RELATIONS_OBJECT: Tables<{
     descendants: string[];
 }> = {
     // --- app relations ---
-    product: {
-        descendants: [
-            ...RELATIONS.product.oneToMany,
-            ...RELATIONS.product.manyToOne,
-            ...RELATIONS.product.manyToMany,
-        ],
-        ascendants: [
-            ...RELATIONS.product.manyToOne,
-            ...RELATIONS.product.manyToMany,
-        ],
-    },
     // --- default relations ---
     role: {
         descendants: [

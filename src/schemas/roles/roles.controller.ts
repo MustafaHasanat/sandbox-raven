@@ -17,16 +17,16 @@ import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
-} from "../../common/decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../common/types";
-import { RoleFields, TablesNames } from "../../common/enums/tables.enum";
-import { RELATIONS_OBJECT } from "../../common/constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../common/pipes";
+} from "../../decorators";
+import { CustomResponseType, DeleteQueryProps } from "../../types";
+import { RoleFields, TablesNames } from "../../enums/tables.enum";
+import { RELATIONS_OBJECT } from "../../constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
 import { Role } from "../../entities/role.entity";
-import { CreateRoleDto } from "../../common/dto/roles/create-role.dto";
-import { UpdateRoleDto } from "../../common/dto/roles/update-role.dto";
-import { DeletionQuery } from "src/common/decorators/delete.decorator";
-import { getUserTokenData } from "src/common/helpers";
+import { CreateRoleDto } from "../../dto/roles/create-role.dto";
+import { UpdateRoleDto } from "../../dto/roles/update-role.dto";
+import { DeletionQuery } from "src/decorators/delete.decorator";
+import { getUserTokenData } from "src/helpers";
 
 @ControllerWrapper("role")
 export class RolesController {

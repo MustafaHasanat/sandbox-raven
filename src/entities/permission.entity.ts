@@ -8,8 +8,8 @@ import {
 } from "typeorm";
 import { IsEnum, IsUUID, Length } from "class-validator";
 import { Role } from "./role.entity";
-import { PermissionAction } from "../common/enums/permissions.enum";
-import { TablesNames } from "../common/enums/tables.enum";
+import { PermissionAction } from "../enums/permissions.enum";
+import { TablesNames } from "../enums/tables.enum";
 
 @Entity()
 export class Permission {

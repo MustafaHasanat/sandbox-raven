@@ -2,12 +2,12 @@
 import { MailerService } from "@nestjs-modules/mailer";
 import { Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { mailing } from "../../common/constants/services";
-import { sendEmail } from "../../common/helpers";
-import { errorRes, invalidRes, validRes } from "../../common/responses";
-import { emailValidator } from "../../common/middlewares";
+import { mailing } from "../../constants/services";
+import { sendEmail } from "../../helpers";
+import { errorRes, invalidRes, validRes } from "../../responses";
+import { emailValidator } from "../../middlewares";
 import { UsersService } from "../users/users.service";
-import { CustomResponseType, TokenPayload } from "../../common/types";
+import { CustomResponseType, TokenPayload } from "../../types";
 
 @Injectable()
 export class AuthService {

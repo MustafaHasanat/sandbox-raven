@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { PipeTransform, Injectable, BadRequestException } from "@nestjs/common";
-import { camelCaseToSnakeCase } from "../../common/helpers";
-import { GetAllProps, GetQueryProps } from "../../common/types";
+import { camelCaseToSnakeCase } from "../helpers";
+import { GetAllProps, GetQueryProps } from "../types";
 import { FindManyOptions } from "typeorm";
 import { filteredGetQuery } from "../middlewares";
 

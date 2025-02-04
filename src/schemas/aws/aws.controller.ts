@@ -12,8 +12,8 @@ import {
 import { FileInterceptor } from "@nestjs/platform-express";
 import { Response } from "express";
 import { ApiBody, ApiConsumes, ApiOperation, ApiQuery } from "@nestjs/swagger";
-import { ControllerWrapper } from "../../common/decorators";
-import { CustomResponseType } from "../../common/types";
+import { ControllerWrapper } from "../../decorators";
+import { CustomResponseType } from "../../types";
 import {
     DeleteObjectCommandOutput,
     GetObjectCommandOutput,

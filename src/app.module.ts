@@ -1,6 +1,7 @@
-import { ProductsModule } from "./schemas/products/products.module";
 import { MailerModule } from "@nestjs-modules/mailer";
 import { S3Module } from "./schemas/aws/aws.module";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -8,7 +9,7 @@ import { UsersModule } from "./schemas/users/users.module";
 import { RolesModule } from "./schemas/roles/roles.module";
 import { PermissionsModule } from "./schemas/permissions/permissions.module";
 import { AuthModule } from "./schemas/auth/auth.module";
-import { AuthGuard, PermissionGuard } from "./common/guards";
+import { AuthGuard, PermissionGuard } from "./guards";
 import { APP_GUARD } from "@nestjs/core";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { Permission, Role } from "./entities";
@@ -42,7 +43,6 @@ import entities from "./entities/entities";
         PermissionsModule,
         UsersModule,
         // --- app tables ---
-        ProductsModule,
         // --- app repositories ---
         TypeOrmModule.forFeature([Role]),
         TypeOrmModule.forFeature([Permission]),
@@ -57,6 +57,7 @@ import entities from "./entities/entities";
                 },
             },
         }),
+
         // --- AWS-S3 ---
         S3Module,
         // --- jwt ---

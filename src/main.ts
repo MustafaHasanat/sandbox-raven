@@ -14,8 +14,8 @@ async function bootstrap() {
 
     // configure swagger
     const config = new DocumentBuilder()
-        .setTitle("Sandbox Raven DB")
-        .setDescription("The API of the Sandbox Raven DB website")
+        .setTitle("Raven Project DB")
+        .setDescription("The API of the Raven Project DB website")
         .setVersion("1.0")
         .addBearerAuth()
         .build();

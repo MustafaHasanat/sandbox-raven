@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { CustomResponseType } from "../../common/types";
+import { CustomResponseType } from "../../types";
 import {
     S3Client,
     PutObjectCommand,

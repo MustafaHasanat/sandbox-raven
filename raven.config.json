@@ -1,0 +1,488 @@
+{
+    "project": {
+        "framework": "nest.js",
+        "name": "Raven Project",
+        "outDir": "./src",
+        "debugger": true
+    },
+    "schema": {
+        "tables": {
+            "user": {
+                "first_name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "email": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isEmail": true
+                    }
+                },
+                "avatar": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true
+                    }
+                },
+                "role": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "UserRole"
+                    }
+                }
+            },
+            "business": {
+                "name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 50
+                    }
+                },
+                "subdomain": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isUnique": true,
+                        "maxLength": 25
+                    }
+                },
+                "location": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isLatLong": true
+                    }
+                },
+                "slogan": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 100
+                    }
+                },
+                "brief": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 500
+                    }
+                },
+                "logo": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true,
+                        "isRequired": true
+                    }
+                },
+                "tier": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "BusinessTier"
+                    }
+                },
+                "status": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "BusinessStatus"
+                    }
+                },
+                "theme": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "WebsiteTheme"
+                    }
+                },
+                "wifi_pass": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 100
+                    }
+                },
+                "phone_number": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 100,
+                        "isPhoneNumber": true
+                    }
+                },
+                "public_phone": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 100,
+                        "isPhoneNumber": true
+                    }
+                },
+                "instagram": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true
+                    }
+                },
+                "facebook": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true
+                    }
+                },
+                "whatsapp": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "maxLength": 100,
+                        "isPhoneNumber": true
+                    }
+                }
+            },
+            "item": {
+                "name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "price": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isDecimal": true,
+                        "min": 0
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 1000
+                    }
+                },
+                "image": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true,
+                        "isRequired": true
+                    }
+                },
+                "quantity": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isInteger": true,
+                        "min": 0
+                    }
+                }
+            },
+            "collection": {
+                "name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                }
+            },
+            "testimonial": {
+                "content": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "status": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "BusinessStatus"
+                    }
+                }
+            },
+            "discount": {
+                "percent": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isPercentage": true,
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            },
+            "coupon": {
+                "code": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "percent": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isPercentage": true,
+                        "min": 0,
+                        "max": 1
+                    }
+                },
+                "amount": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isDecimal": true,
+                        "min": 0
+                    }
+                }
+            },
+            "review": {
+                "comment": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "minLength": 0,
+                        "maxLength": 1000
+                    }
+                },
+                "rating": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isInteger": true,
+                        "min": 1,
+                        "max": 5
+                    }
+                },
+                "image": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true,
+                        "isRequired": true
+                    }
+                }
+            },
+            "order": {
+                "status": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "OrderStatus"
+                    }
+                },
+                "total_price": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isDecimal": true,
+                        "min": 0
+                    }
+                }
+            },
+            "order_item": {
+                "quantity": {
+                    "type": "number",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isInteger": true,
+                        "min": 0
+                    }
+                }
+            },
+            "caramel": {
+                "identifier": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isUnique": true,
+                        "maxLength": 30
+                    }
+                },
+                "content": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true
+                    }
+                }
+            },
+            "availability_slot": {
+                "day": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "enum": "Day"
+                    }
+                },
+                "start_time": {
+                    "type": "date",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isDate": true
+                    }
+                },
+                "end_time": {
+                    "type": "date",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isDate": true
+                    }
+                }
+            },
+            "team_member": {
+                "name": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 25
+                    }
+                },
+                "image": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isUrl": true,
+                        "isRequired": true
+                    }
+                },
+                "brief": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 1000
+                    }
+                },
+                "role": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "maxLength": 50
+                    }
+                }
+            }
+        },
+        "relations": [
+            "user<>business",
+            "user>testimonial",
+            "user>review",
+            "user>order",
+            "user>order_item",
+            "business>item",
+            "business>collection",
+            "business>testimonial",
+            "business>discount",
+            "business>coupon",
+            "business>review",
+            "business>order",
+            "business>order_item",
+            "business>availability_slot",
+            "business>team_member",
+            "collection>item",
+            "item-discount",
+            "item>review",
+            "item>order_item",
+            "coupon>order",
+            "order>order_item"
+        ],
+        "enums": {
+            "UserRole": ["admin", "owner", "employee", "customer"],
+            "BusinessTier": ["essentials", "professional", "elite", "royal"],
+            "BusinessStatus": ["pending", "active", "restricted"],
+            "WebsiteTheme": ["modern", "classic", "nature"],
+            "OrderStatus": ["pending", "received"],
+            "TestimonialStatus": ["pending", "approved"],
+            "Day": [
+                "saturday",
+                "sunday",
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+            ]
+        }
+    },
+    "services": {
+        "mailer": true,
+        "aws": true
+    },
+    "env": {
+        "raven": {
+            "secret": "RAVEN_SECRET"
+        },
+        "swagger": {
+            "allowedUrls": "FRONTEND_URLS",
+            "url": "ENVIRONMENT",
+            "port": "PORT"
+        },
+        "jwt": {
+            "secret": "JWT_SECRET"
+        },
+        "database": {
+            "host": "DATABASE_HOST",
+            "port": "DATABASE_PORT",
+            "user": "POSTGRES_USER",
+            "password": "POSTGRES_PASSWORD",
+            "name": "POSTGRES_DB"
+        },
+        "mailer": {
+            "email": "OFFICIAL_EMAIL",
+            "password": "OFFICIAL_EMAIL_PASSWORD",
+            "provider": "MAILER_SERVICE_PROVIDER"
+        },
+        "aws": {
+            "accessKey": "AWS_ACCESS_KEY",
+            "secretKey": "AWS_SECRET_ACCESS_KEY",
+            "region": "AWS_REGION",
+            "bucketName": "S3_BUCKET_NAME"
+        }
+    }
+}

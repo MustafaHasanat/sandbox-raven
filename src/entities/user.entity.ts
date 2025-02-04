@@ -1,5 +1,5 @@
 import { IsEmail, IsEnum, IsUUID, Length, Matches } from "class-validator";
-import { UserRole } from "../common/enums/users.enum";
+import { UserRole } from "../enums/users.enum";
 import {
     Entity,
     Column,
