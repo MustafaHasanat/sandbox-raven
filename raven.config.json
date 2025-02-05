@@ -455,9 +455,6 @@
         "aws": true
     },
     "env": {
-        "raven": {
-            "secret": "RAVEN_SECRET"
-        },
         "swagger": {
             "allowedUrls": "FRONTEND_URLS",
             "url": "ENVIRONMENT",
