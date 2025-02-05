@@ -10,18 +10,18 @@ import {
     CustomResponseType,
     DeleteQueryProps,
     FullTokenPayload,
-} from "../../types";
-import { errorRes, newInstanceRes, updatedRes } from "../../responses";
-import { CreatePermissionDto } from "../../dto/permissions/create-permission.dto";
-import { UpdatePermissionDto } from "../../dto/permissions/update-permission.dto";
+} from "src/types";
+import { errorRes, newInstanceRes, updatedRes } from "src/responses";
+import { CreatePermissionDto } from "src/dto/permissions/create-permission.dto";
+import { UpdatePermissionDto } from "src/dto/permissions/update-permission.dto";
 import {
     createHandler,
     deleteHandler,
     getAllHandler,
     getByIdHandler,
     updateHandler,
-} from "../../helpers";
-import { Permission } from "../../entities";
+} from "src/helpers";
+import { Permission } from "src/entities";
 
 @Injectable()
 export class PermissionsService {

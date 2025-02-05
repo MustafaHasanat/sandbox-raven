@@ -1,3 +1,15 @@
+import { BusinessesModule } from "./schemas/businesses/businesses.module";
+import { ItemsModule } from "./schemas/items/items.module";
+import { CollectionsModule } from "./schemas/collections/collections.module";
+import { TestimonialsModule } from "./schemas/testimonials/testimonials.module";
+import { DiscountsModule } from "./schemas/discounts/discounts.module";
+import { CouponsModule } from "./schemas/coupons/coupons.module";
+import { ReviewsModule } from "./schemas/reviews/reviews.module";
+import { OrdersModule } from "./schemas/orders/orders.module";
+import { OrderItemsModule } from "./schemas/orderItems/orderItems.module";
+import { CaramelsModule } from "./schemas/caramels/caramels.module";
+import { AvailabilitySlotsModule } from "./schemas/availabilitySlots/availabilitySlots.module";
+import { TeamMembersModule } from "./schemas/teamMembers/teamMembers.module";
 import { MailerModule } from "@nestjs-modules/mailer";
 import { S3Module } from "./schemas/aws/aws.module";
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -43,6 +55,18 @@ import entities from "./entities/entities";
         PermissionsModule,
         UsersModule,
         // --- app tables ---
+        BusinessesModule,
+        ItemsModule,
+        CollectionsModule,
+        TestimonialsModule,
+        DiscountsModule,
+        CouponsModule,
+        ReviewsModule,
+        OrdersModule,
+        OrderItemsModule,
+        CaramelsModule,
+        AvailabilitySlotsModule,
+        TeamMembersModule,
         // --- app repositories ---
         TypeOrmModule.forFeature([Role]),
         TypeOrmModule.forFeature([Permission]),

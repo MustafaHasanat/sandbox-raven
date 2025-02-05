@@ -11,22 +11,22 @@ import {
 } from "@nestjs/common";
 import { DeleteResult, FindManyOptions, UpdateResult } from "typeorm";
 import { Request, Response } from "express";
-import { User } from "../../entities/user.entity";
+import { User } from "src/entities/user.entity";
 import { UsersService } from "./users.service";
-import { CreateUserDto } from "../../dto/users/create-user.dto";
-import { UpdateUserDto } from "../../dto/users/update-user.dto";
-import { TablesNames, UserFields } from "../../enums/tables.enum";
+import { CreateUserDto } from "src/dto/users/create-user.dto";
+import { UpdateUserDto } from "src/dto/users/update-user.dto";
+import { TablesNames, UserFields } from "src/enums/tables.enum";
 import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
     DeletionQuery,
     GetOneByQuery,
-} from "../../decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../types";
-import { RELATIONS_OBJECT } from "../../constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
-import { getUserTokenData } from "../../helpers";
+} from "src/decorators";
+import { CustomResponseType, DeleteQueryProps } from "src/types";
+import { RELATIONS_OBJECT } from "src/constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "src/pipes";
+import { getUserTokenData } from "src/helpers";
 
 @ControllerWrapper("user")
 export class UsersController {

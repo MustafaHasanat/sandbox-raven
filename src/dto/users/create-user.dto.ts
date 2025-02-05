@@ -8,7 +8,7 @@ import {
     NotContains,
 } from "class-validator";
 import { LoginUserDto } from "./login-user.dto";
-import { UserRole } from "../../enums/users.enum";
+import { UserRole } from "src/enums/users.enum";
 
 export class CreateUserDto extends IntersectionType(LoginUserDto) {
     // --- Original fields ---

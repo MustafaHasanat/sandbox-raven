@@ -10,18 +10,18 @@ import {
     CustomResponseType,
     DeleteQueryProps,
     FullTokenPayload,
-} from "../../types";
-import { errorRes, newInstanceRes, updatedRes } from "../../responses";
-import { CreateRoleDto } from "../../dto/roles/create-role.dto";
-import { UpdateRoleDto } from "../../dto/roles/update-role.dto";
+} from "src/types";
+import { errorRes, newInstanceRes, updatedRes } from "src/responses";
+import { CreateRoleDto } from "src/dto/roles/create-role.dto";
+import { UpdateRoleDto } from "src/dto/roles/update-role.dto";
 import {
     createHandler,
     deleteHandler,
     getAllHandler,
     getByIdHandler,
     updateHandler,
-} from "../../helpers";
-import { Role } from "../../entities";
+} from "src/helpers";
+import { Role } from "src/entities";
 import { UserRole } from "src/enums/users.enum";
 
 @Injectable()

@@ -1,0 +1,46 @@
+import {
+    Entity,
+    Column,
+    CreateDateColumn,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+} from "typeorm";
+import { IsUUID, MaxLength, IsDecimal } from "class-validator";
+
+@Entity()
+export class Coupon {
+    // --- base columns ---
+    @PrimaryGeneratedColumn("uuid")
+    @IsUUID()
+    id: string;
+
+    @UpdateDateColumn({ type: "timestamp" })
+    updatedAt: Date;
+
+    @CreateDateColumn({ type: "timestamp" })
+    createdAt: Date;
+
+    // --- columns ---
+
+    @MaxLength(25)
+    @Column({
+        type: "text",
+        nullable: false,
+    })
+    code: string;
+
+    @Column({
+        type: "int",
+        nullable: true,
+    })
+    percent?: number;
+
+    @IsDecimal()
+    @Column({
+        type: "int",
+        nullable: true,
+    })
+    amount?: number;
+
+    // --- relations ---
+}

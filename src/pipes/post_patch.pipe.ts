@@ -18,6 +18,35 @@ type TransformerMappingType = {
 };
 
 const tablesTransformers: { [tableName: string]: NewInstanceTransformer } = {
+    business: {},
+    item: {
+        price: "number",
+        quantity: "number",
+    },
+    collection: {},
+    testimonial: {},
+    discount: {
+        percent: "number",
+    },
+    coupon: {
+        percent: "number",
+        amount: "number",
+    },
+    review: {
+        rating: "number",
+    },
+    order: {
+        totalPrice: "number",
+    },
+    orderItem: {
+        quantity: "number",
+    },
+    caramel: {},
+    availabilitySlot: {
+        startTime: "date",
+        endTime: "date",
+    },
+    teamMember: {},
     user: {},
     role: {},
     permission: {},

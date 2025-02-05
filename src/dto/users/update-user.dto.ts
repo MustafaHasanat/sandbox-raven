@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from "@nestjs/swagger";
 import { CreateUserDto } from "./create-user.dto";
-import { UserRole } from "../../enums/users.enum";
+import { UserRole } from "src/enums/users.enum";
 import { IsOptional } from "class-validator";
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {

@@ -1,3 +1,15 @@
+export { Business } from "./business.entity";
+export { Item } from "./item.entity";
+export { Collection } from "./collection.entity";
+export { Testimonial } from "./testimonial.entity";
+export { Discount } from "./discount.entity";
+export { Coupon } from "./coupon.entity";
+export { Review } from "./review.entity";
+export { Order } from "./order.entity";
+export { OrderItem } from "./orderItem.entity";
+export { Caramel } from "./caramel.entity";
+export { AvailabilitySlot } from "./availabilitySlot.entity";
+export { TeamMember } from "./teamMember.entity";
 export { Permission } from "./permission.entity";
 export { Role } from "./role.entity";
 export { User } from "./user.entity";

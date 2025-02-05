@@ -17,14 +17,14 @@ import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
-} from "../../decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../types";
-import { PermissionFields, TablesNames } from "../../enums/tables.enum";
-import { RELATIONS_OBJECT } from "../../constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
-import { Permission } from "../../entities/permission.entity";
-import { CreatePermissionDto } from "../../dto/permissions/create-permission.dto";
-import { UpdatePermissionDto } from "../../dto/permissions/update-permission.dto";
+} from "src/decorators";
+import { CustomResponseType, DeleteQueryProps } from "src/types";
+import { PermissionFields, TablesNames } from "src/enums/tables.enum";
+import { RELATIONS_OBJECT } from "src/constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "src/pipes";
+import { Permission } from "src/entities/permission.entity";
+import { CreatePermissionDto } from "src/dto/permissions/create-permission.dto";
+import { UpdatePermissionDto } from "src/dto/permissions/update-permission.dto";
 import { DeletionQuery } from "src/decorators/delete.decorator";
 import { getUserTokenData } from "src/helpers";
 

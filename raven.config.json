@@ -2,13 +2,13 @@
     "project": {
         "framework": "nest.js",
         "name": "Raven Project",
-        "outDir": "./src",
+        "outDir": "src",
         "debugger": true
     },
     "schema": {
         "tables": {
             "user": {
-                "first_name": {
+                "firstName": {
                     "type": "string",
                     "description": "",
                     "validations": {
@@ -16,7 +16,7 @@
                         "maxLength": 25
                     }
                 },
-                "last_name": {
+                "lastName": {
                     "type": "string",
                     "description": "",
                     "validations": {
@@ -43,7 +43,7 @@
                     "type": "enum",
                     "description": "",
                     "validations": {
-                        "enum": "UserRole"
+                        "enum": "userRole"
                     }
                 }
             },
@@ -51,6 +51,7 @@
                 "name": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "isRequired": true,
                         "maxLength": 50
@@ -59,6 +60,7 @@
                 "subdomain": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "isRequired": true,
                         "isUnique": true,
@@ -68,6 +70,7 @@
                 "location": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "isRequired": true,
                         "isLatLong": true
@@ -76,6 +79,7 @@
                 "slogan": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "maxLength": 100
                     }
@@ -90,6 +94,7 @@
                 "logo": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "isUrl": true,
                         "isRequired": true
@@ -98,40 +103,42 @@
                 "tier": {
                     "type": "enum",
                     "description": "",
+                    "default": "essentials",
                     "validations": {
-                        "enum": "BusinessTier"
+                        "enum": "businessTier"
                     }
                 },
                 "status": {
                     "type": "enum",
                     "description": "",
                     "validations": {
-                        "enum": "BusinessStatus"
+                        "enum": "businessStatus"
                     }
                 },
                 "theme": {
                     "type": "enum",
                     "description": "",
                     "validations": {
-                        "enum": "WebsiteTheme"
+                        "enum": "websiteTheme"
                     }
                 },
-                "wifi_pass": {
+                "wifiPass": {
                     "type": "string",
                     "description": "",
                     "validations": {
                         "maxLength": 100
                     }
                 },
-                "phone_number": {
+                "phoneNumber": {
                     "type": "string",
                     "description": "",
+                    "default": "",
                     "validations": {
                         "maxLength": 100,
                         "isPhoneNumber": true
                     }
                 },
-                "public_phone": {
+                "publicPhone": {
                     "type": "string",
                     "description": "",
                     "validations": {
@@ -229,7 +236,7 @@
                     "type": "enum",
                     "description": "",
                     "validations": {
-                        "enum": "BusinessStatus"
+                        "enum": "businessStatus"
                     }
                 }
             },
@@ -306,10 +313,10 @@
                     "type": "enum",
                     "description": "",
                     "validations": {
-                        "enum": "OrderStatus"
+                        "enum": "orderStatus"
                     }
                 },
-                "total_price": {
+                "totalPrice": {
                     "type": "number",
                     "description": "",
                     "validations": {
@@ -319,7 +326,7 @@
                     }
                 }
             },
-            "order_item": {
+            "orderItem": {
                 "quantity": {
                     "type": "number",
                     "description": "",
@@ -348,16 +355,16 @@
                     }
                 }
             },
-            "availability_slot": {
+            "availabilitySlot": {
                 "day": {
                     "type": "enum",
                     "description": "",
                     "validations": {
                         "isRequired": true,
-                        "enum": "Day"
+                        "enum": "day"
                     }
                 },
-                "start_time": {
+                "startTime": {
                     "type": "date",
                     "description": "",
                     "validations": {
@@ -365,7 +372,7 @@
                         "isDate": true
                     }
                 },
-                "end_time": {
+                "endTime": {
                     "type": "date",
                     "description": "",
                     "validations": {
@@ -374,7 +381,7 @@
                     }
                 }
             },
-            "team_member": {
+            "teamMember": {
                 "name": {
                     "type": "string",
                     "description": "",
@@ -414,7 +421,7 @@
             "user>testimonial",
             "user>review",
             "user>order",
-            "user>order_item",
+            "user>orderItem",
             "business>item",
             "business>collection",
             "business>testimonial",
@@ -422,24 +429,24 @@
             "business>coupon",
             "business>review",
             "business>order",
-            "business>order_item",
-            "business>availability_slot",
-            "business>team_member",
+            "business>orderItem",
+            "business>availabilitySlot",
+            "business>teamMember",
             "collection>item",
             "item-discount",
             "item>review",
-            "item>order_item",
+            "item>orderItem",
             "coupon>order",
-            "order>order_item"
+            "order>orderItem"
         ],
         "enums": {
-            "UserRole": ["admin", "owner", "employee", "customer"],
-            "BusinessTier": ["essentials", "professional", "elite", "royal"],
-            "BusinessStatus": ["pending", "active", "restricted"],
-            "WebsiteTheme": ["modern", "classic", "nature"],
-            "OrderStatus": ["pending", "received"],
-            "TestimonialStatus": ["pending", "approved"],
-            "Day": [
+            "userRole": ["admin", "owner", "employee", "customer"],
+            "businessTier": ["essentials", "professional", "elite", "royal"],
+            "businessStatus": ["pending", "active", "restricted"],
+            "websiteTheme": ["modern", "classic", "nature"],
+            "orderStatus": ["pending", "received"],
+            "testimonialStatus": ["pending", "approved"],
+            "day": [
                 "saturday",
                 "sunday",
                 "monday",

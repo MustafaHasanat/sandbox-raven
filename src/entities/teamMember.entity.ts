@@ -1,0 +1,54 @@
+import {
+    Entity,
+    Column,
+    CreateDateColumn,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+} from "typeorm";
+import { IsUUID, MaxLength, IsUrl } from "class-validator";
+
+@Entity()
+export class TeamMember {
+    // --- base columns ---
+    @PrimaryGeneratedColumn("uuid")
+    @IsUUID()
+    id: string;
+
+    @UpdateDateColumn({ type: "timestamp" })
+    updatedAt: Date;
+
+    @CreateDateColumn({ type: "timestamp" })
+    createdAt: Date;
+
+    // --- columns ---
+
+    @MaxLength(25)
+    @Column({
+        type: "text",
+        nullable: false,
+    })
+    name: string;
+
+    @IsUrl()
+    @Column({
+        type: "text",
+        nullable: false,
+    })
+    image: string;
+
+    @MaxLength(1000)
+    @Column({
+        type: "text",
+        nullable: false,
+    })
+    brief: string;
+
+    @MaxLength(50)
+    @Column({
+        type: "text",
+        nullable: false,
+    })
+    role: string;
+
+    // --- relations ---
+}

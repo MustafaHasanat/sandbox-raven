@@ -8,13 +8,13 @@ import {
     UpdateResult,
 } from "typeorm";
 import { compare, hash } from "bcrypt";
-import { User } from "../../entities/user.entity";
+import { User } from "src/entities/user.entity";
 import {
     CustomResponseType,
     FullTokenPayload,
     DeleteQueryProps,
-} from "../../types";
-import { UserRole } from "../../enums/users.enum";
+} from "src/types";
+import { UserRole } from "src/enums/users.enum";
 import {
     errorRes,
     forbiddenRes,
@@ -22,16 +22,16 @@ import {
     newInstanceRes,
     notFoundRes,
     updatedRes,
-} from "../../responses";
-import { CreateUserDto } from "../../dto/users/create-user.dto";
-import { UpdateUserDto } from "../../dto/users/update-user.dto";
+} from "src/responses";
+import { CreateUserDto } from "src/dto/users/create-user.dto";
+import { UpdateUserDto } from "src/dto/users/update-user.dto";
 import {
     createHandler,
     deleteHandler,
     getAllHandler,
     getByIdHandler,
     updateHandler,
-} from "../../helpers";
+} from "src/helpers";
 
 @Injectable()
 export class UsersService {

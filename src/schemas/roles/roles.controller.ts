@@ -17,14 +17,14 @@ import {
     EditorsWrapper,
     ControllerWrapper,
     GetAllByQuery,
-} from "../../decorators";
-import { CustomResponseType, DeleteQueryProps } from "../../types";
-import { RoleFields, TablesNames } from "../../enums/tables.enum";
-import { RELATIONS_OBJECT } from "../../constants/relations";
-import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "../../pipes";
-import { Role } from "../../entities/role.entity";
-import { CreateRoleDto } from "../../dto/roles/create-role.dto";
-import { UpdateRoleDto } from "../../dto/roles/update-role.dto";
+} from "src/decorators";
+import { CustomResponseType, DeleteQueryProps } from "src/types";
+import { RoleFields, TablesNames } from "src/enums/tables.enum";
+import { RELATIONS_OBJECT } from "src/constants/relations";
+import { DELETE_Pipe, GET_Pipe, POST_PATCH_Pipe } from "src/pipes";
+import { Role } from "src/entities/role.entity";
+import { CreateRoleDto } from "src/dto/roles/create-role.dto";
+import { UpdateRoleDto } from "src/dto/roles/update-role.dto";
 import { DeletionQuery } from "src/decorators/delete.decorator";
 import { getUserTokenData } from "src/helpers";
 
