@@ -26,6 +26,7 @@ export class TeamMember {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     name: string;
 
@@ -33,6 +34,7 @@ export class TeamMember {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     image: string;
 
@@ -40,6 +42,7 @@ export class TeamMember {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     brief: string;
 
@@ -47,6 +50,7 @@ export class TeamMember {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     role: string;
 

@@ -26,6 +26,7 @@ export class Review {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     comment: string;
 
@@ -33,6 +34,7 @@ export class Review {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     rating: number;
 
@@ -40,6 +42,7 @@ export class Review {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     image: string;
 

@@ -26,6 +26,7 @@ export class Collection {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     name: string;
 

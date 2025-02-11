@@ -26,6 +26,7 @@ export class OrderItem {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     quantity: number;
 

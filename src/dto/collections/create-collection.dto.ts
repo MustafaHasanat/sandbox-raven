@@ -1,7 +1,15 @@
 import { ApiProperty } from "@nestjs/swagger";
-import * as cv from "class-validator";
+import { MaxLength } from "class-validator";
 
 export class CreateCollectionDto {
     // --- Original fields ---
+
+    @MaxLength(25)
+    @ApiProperty({
+        required: true,
+        description: "",
+    })
+    name: string;
+
     // --- Relational fields ---
 }

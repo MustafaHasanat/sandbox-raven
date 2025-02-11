@@ -27,7 +27,7 @@ export class Order {
     @Column({
         type: "enum",
         nullable: true,
-
+        comment: "",
         enum: OrderStatus,
 
         // default: OrderStatus.DEFAULT_VALUE,
@@ -38,6 +38,7 @@ export class Order {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     totalPrice: number;
 

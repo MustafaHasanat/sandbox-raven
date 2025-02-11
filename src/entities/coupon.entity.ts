@@ -26,12 +26,14 @@ export class Coupon {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     code: string;
 
     @Column({
         type: "int",
         nullable: true,
+        comment: "",
     })
     percent?: number;
 
@@ -39,6 +41,7 @@ export class Coupon {
     @Column({
         type: "int",
         nullable: true,
+        comment: "",
     })
     amount?: number;
 

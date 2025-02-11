@@ -1,7 +1,15 @@
 import { ApiProperty } from "@nestjs/swagger";
-import * as cv from "class-validator";
+import { IsInt } from "class-validator";
 
 export class CreateOrderItemDto {
     // --- Original fields ---
+
+    @IsInt()
+    @ApiProperty({
+        required: true,
+        description: "",
+    })
+    quantity: number;
+
     // --- Relational fields ---
 }

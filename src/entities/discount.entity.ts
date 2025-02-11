@@ -25,6 +25,7 @@ export class Discount {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     percent: number;
 

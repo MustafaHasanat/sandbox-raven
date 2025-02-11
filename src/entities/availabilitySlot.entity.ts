@@ -27,7 +27,7 @@ export class AvailabilitySlot {
     @Column({
         type: "enum",
         nullable: false,
-
+        comment: "",
         enum: Day,
 
         // default: Day.DEFAULT_VALUE,
@@ -38,6 +38,7 @@ export class AvailabilitySlot {
     @Column({
         type: "date",
         nullable: false,
+        comment: "",
     })
     startTime: Date;
 
@@ -45,6 +46,7 @@ export class AvailabilitySlot {
     @Column({
         type: "date",
         nullable: false,
+        comment: "",
     })
     endTime: Date;
 

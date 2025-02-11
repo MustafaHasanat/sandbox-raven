@@ -26,6 +26,8 @@ export class Caramel {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
+
         unique: true,
     })
     identifier: string;
@@ -33,6 +35,7 @@ export class Caramel {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     content: string;
 

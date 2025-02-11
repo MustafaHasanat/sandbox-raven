@@ -27,6 +27,7 @@ export class Testimonial {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     content: string;
 
@@ -34,7 +35,7 @@ export class Testimonial {
     @Column({
         type: "enum",
         nullable: true,
-
+        comment: "",
         enum: BusinessStatus,
 
         // default: BusinessStatus.DEFAULT_VALUE,

@@ -36,6 +36,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     name: string;
 
@@ -43,6 +44,8 @@ export class Business {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
+
         unique: true,
     })
     subdomain: string;
@@ -51,6 +54,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     location: string;
 
@@ -58,6 +62,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     slogan?: string;
 
@@ -65,6 +70,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     brief?: string;
 
@@ -72,6 +78,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     logo: string;
 
@@ -79,7 +86,7 @@ export class Business {
     @Column({
         type: "enum",
         nullable: true,
-
+        comment: "",
         enum: BusinessTier,
 
         // default: BusinessTier.DEFAULT_VALUE,
@@ -90,7 +97,7 @@ export class Business {
     @Column({
         type: "enum",
         nullable: true,
-
+        comment: "",
         enum: BusinessStatus,
 
         // default: BusinessStatus.DEFAULT_VALUE,
@@ -101,7 +108,7 @@ export class Business {
     @Column({
         type: "enum",
         nullable: true,
-
+        comment: "",
         enum: WebsiteTheme,
 
         // default: WebsiteTheme.DEFAULT_VALUE,
@@ -112,6 +119,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     wifiPass?: string;
 
@@ -120,6 +128,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     phoneNumber?: string;
 
@@ -128,6 +137,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     publicPhone?: string;
 
@@ -135,6 +145,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     instagram?: string;
 
@@ -142,6 +153,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     facebook?: string;
 
@@ -150,6 +162,7 @@ export class Business {
     @Column({
         type: "text",
         nullable: true,
+        comment: "",
     })
     whatsapp?: string;
 

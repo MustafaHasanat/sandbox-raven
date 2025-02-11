@@ -26,6 +26,7 @@ export class Item {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     name: string;
 
@@ -33,6 +34,7 @@ export class Item {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     price: number;
 
@@ -40,6 +42,7 @@ export class Item {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     description: string;
 
@@ -47,6 +50,7 @@ export class Item {
     @Column({
         type: "text",
         nullable: false,
+        comment: "",
     })
     image: string;
 
@@ -54,6 +58,7 @@ export class Item {
     @Column({
         type: "int",
         nullable: false,
+        comment: "",
     })
     quantity: number;
 
