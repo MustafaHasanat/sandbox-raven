@@ -22,4 +22,11 @@ export class UpdateTeamMemberDto extends PartialType(CreateTeamMemberDto) {
     role?: string;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

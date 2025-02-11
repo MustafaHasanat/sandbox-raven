@@ -40,4 +40,15 @@ export class CreateItemDto {
     quantity: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related collection ID",
+    })
+    collection: string;
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
 }

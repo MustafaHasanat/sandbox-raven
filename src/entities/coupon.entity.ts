@@ -1,9 +1,13 @@
+import { Order } from "./order.entity";
+import { Business } from "./business.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToMany,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, MaxLength, IsDecimal } from "class-validator";
 
@@ -46,4 +50,9 @@ export class Coupon {
     amount?: number;
 
     // --- relations ---
+    @OneToMany(() => Order, (order) => order.coupon)
+    orders: Order[];
+
+    @ManyToOne(() => Business, (business) => business.coupons)
+    business: Business;
 }

@@ -10,4 +10,29 @@ export class UpdateOrderItemDto extends PartialType(CreateOrderItemDto) {
     quantity?: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related order ID",
+    })
+    order?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related item ID",
+    })
+    item?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related user ID",
+    })
+    user?: string;
 }

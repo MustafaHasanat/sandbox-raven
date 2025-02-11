@@ -1,13 +1,24 @@
+import { TeamMember } from "./teamMember.entity";
+import { AvailabilitySlot } from "./availabilitySlot.entity";
+import { OrderItem } from "./orderItem.entity";
+import { Order } from "./order.entity";
+import { Review } from "./review.entity";
+import { Coupon } from "./coupon.entity";
+import { Discount } from "./discount.entity";
+import { Testimonial } from "./testimonial.entity";
+import { Collection } from "./collection.entity";
+import { Item } from "./item.entity";
+import { BusinessTier } from "src/enums/businessTier.enum";
+import { BusinessStatus } from "src/enums/businessStatus.enum";
+import { WebsiteTheme } from "src/enums/websiteTheme.enum";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToMany,
 } from "typeorm";
-import { BusinessTier } from "src/enums/businessTier.enum";
-import { BusinessStatus } from "src/enums/businessStatus.enum";
-import { WebsiteTheme } from "src/enums/websiteTheme.enum";
 import {
     IsUUID,
     MaxLength,
@@ -88,7 +99,6 @@ export class Business {
         nullable: true,
         comment: "",
         enum: BusinessTier,
-
         // default: BusinessTier.DEFAULT_VALUE,
     })
     tier?: BusinessTier;
@@ -99,7 +109,6 @@ export class Business {
         nullable: true,
         comment: "",
         enum: BusinessStatus,
-
         // default: BusinessStatus.DEFAULT_VALUE,
     })
     status?: BusinessStatus;
@@ -110,7 +119,6 @@ export class Business {
         nullable: true,
         comment: "",
         enum: WebsiteTheme,
-
         // default: WebsiteTheme.DEFAULT_VALUE,
     })
     theme?: WebsiteTheme;
@@ -167,4 +175,36 @@ export class Business {
     whatsapp?: string;
 
     // --- relations ---
+    @OneToMany(() => TeamMember, (teamMember) => teamMember.business)
+    teamMembers: TeamMember[];
+
+    @OneToMany(
+        () => AvailabilitySlot,
+        (availabilitySlot) => availabilitySlot.business
+    )
+    availabilitySlots: AvailabilitySlot[];
+
+    @OneToMany(() => OrderItem, (orderItem) => orderItem.business)
+    orderItems: OrderItem[];
+
+    @OneToMany(() => Order, (order) => order.business)
+    orders: Order[];
+
+    @OneToMany(() => Review, (review) => review.business)
+    reviews: Review[];
+
+    @OneToMany(() => Coupon, (coupon) => coupon.business)
+    coupons: Coupon[];
+
+    @OneToMany(() => Discount, (discount) => discount.business)
+    discounts: Discount[];
+
+    @OneToMany(() => Testimonial, (testimonial) => testimonial.business)
+    testimonials: Testimonial[];
+
+    @OneToMany(() => Collection, (collection) => collection.business)
+    collections: Collection[];
+
+    @OneToMany(() => Item, (item) => item.business)
+    items: Item[];
 }

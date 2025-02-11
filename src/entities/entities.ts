@@ -1,3 +1,4 @@
+import { User } from "./user.entity";
 import { Business } from "./business.entity";
 import { Item } from "./item.entity";
 import { Collection } from "./collection.entity";
@@ -15,6 +16,7 @@ import { Role } from "./role.entity";
 import { Permission } from "./permission.entity";
 
 const entities = [
+    User,
     Business,
     Item,
     Collection,

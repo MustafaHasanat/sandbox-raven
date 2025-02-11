@@ -18,4 +18,11 @@ export class UpdateCouponDto extends PartialType(CreateCouponDto) {
     amount?: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

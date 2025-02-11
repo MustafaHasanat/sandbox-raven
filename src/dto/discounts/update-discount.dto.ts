@@ -10,4 +10,11 @@ export class UpdateDiscountDto extends PartialType(CreateDiscountDto) {
     percent?: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

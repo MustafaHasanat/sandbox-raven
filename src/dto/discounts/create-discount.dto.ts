@@ -11,4 +11,10 @@ export class CreateDiscountDto {
     percent: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
 }

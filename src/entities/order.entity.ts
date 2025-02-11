@@ -1,11 +1,17 @@
+import { OrderItem } from "./orderItem.entity";
+import { Coupon } from "./coupon.entity";
+import { Business } from "./business.entity";
+import { User } from "./user.entity";
+import { OrderStatus } from "src/enums/orderStatus.enum";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToMany,
+    ManyToOne,
 } from "typeorm";
-import { OrderStatus } from "src/enums/orderStatus.enum";
 import { IsUUID, IsEnum, IsDecimal } from "class-validator";
 
 @Entity()
@@ -29,7 +35,6 @@ export class Order {
         nullable: true,
         comment: "",
         enum: OrderStatus,
-
         // default: OrderStatus.DEFAULT_VALUE,
     })
     status?: OrderStatus;
@@ -43,4 +48,15 @@ export class Order {
     totalPrice: number;
 
     // --- relations ---
+    @OneToMany(() => OrderItem, (orderItem) => orderItem.order)
+    orderItems: OrderItem[];
+
+    @ManyToOne(() => Coupon, (coupon) => coupon.orders)
+    coupon: Coupon;
+
+    @ManyToOne(() => Business, (business) => business.orders)
+    business: Business;
+
+    @ManyToOne(() => User, (user) => user.orders)
+    user: User;
 }

@@ -48,6 +48,7 @@ export class Permission {
     description: string;
 
     // --- relations ---
+
     @ManyToOne(() => Role, (role) => role.permissions)
     role: Role;
 }

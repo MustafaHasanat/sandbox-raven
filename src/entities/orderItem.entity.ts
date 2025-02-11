@@ -1,9 +1,14 @@
+import { Order } from "./order.entity";
+import { Item } from "./item.entity";
+import { Business } from "./business.entity";
+import { User } from "./user.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, IsInt } from "class-validator";
 
@@ -31,4 +36,15 @@ export class OrderItem {
     quantity: number;
 
     // --- relations ---
+    @ManyToOne(() => Order, (order) => order.orderItems)
+    order: Order;
+
+    @ManyToOne(() => Item, (item) => item.orderItems)
+    item: Item;
+
+    @ManyToOne(() => Business, (business) => business.orderItems)
+    business: Business;
+
+    @ManyToOne(() => User, (user) => user.orderItems)
+    user: User;
 }

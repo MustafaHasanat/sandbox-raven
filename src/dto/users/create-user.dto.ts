@@ -9,6 +9,7 @@ import {
 } from "class-validator";
 import { LoginUserDto } from "./login-user.dto";
 import { UserRole } from "src/enums/users.enum";
+import { MaxLength, IsUrl } from "class-validator";
 
 export class CreateUserDto extends IntersectionType(LoginUserDto) {
     // --- Original fields ---
@@ -51,4 +52,27 @@ export class CreateUserDto extends IntersectionType(LoginUserDto) {
         required: false,
     })
     secret?: string;
+
+    @MaxLength(25)
+    @ApiProperty({
+        required: true,
+        description: "",
+    })
+    firstName: string;
+
+    @MaxLength(25)
+    @ApiProperty({
+        required: true,
+        description: "",
+    })
+    lastName: string;
+
+    @IsUrl()
+    @ApiProperty({
+        required: false,
+        description: "",
+    })
+    avatar?: string;
+
+    // --- Relational fields ---
 }

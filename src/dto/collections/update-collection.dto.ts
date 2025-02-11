@@ -10,4 +10,11 @@ export class UpdateCollectionDto extends PartialType(CreateCollectionDto) {
     name?: string;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

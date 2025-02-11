@@ -1,9 +1,13 @@
+import { Item } from "./item.entity";
+import { Business } from "./business.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToMany,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, MaxLength } from "class-validator";
 
@@ -31,4 +35,9 @@ export class Collection {
     name: string;
 
     // --- relations ---
+    @OneToMany(() => Item, (item) => item.collection)
+    items: Item[];
+
+    @ManyToOne(() => Business, (business) => business.collections)
+    business: Business;
 }

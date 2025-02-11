@@ -26,4 +26,17 @@ export class UpdateItemDto extends PartialType(CreateItemDto) {
     quantity?: number;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related collection ID",
+    })
+    collection?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

@@ -1,11 +1,13 @@
+import { Business } from "./business.entity";
+import { Day } from "src/enums/day.enum";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToOne,
 } from "typeorm";
-import { Day } from "src/enums/day.enum";
 import { IsUUID, IsEnum, IsDate } from "class-validator";
 
 @Entity()
@@ -29,7 +31,6 @@ export class AvailabilitySlot {
         nullable: false,
         comment: "",
         enum: Day,
-
         // default: Day.DEFAULT_VALUE,
     })
     day: Day;
@@ -51,4 +52,6 @@ export class AvailabilitySlot {
     endTime: Date;
 
     // --- relations ---
+    @ManyToOne(() => Business, (business) => business.availabilitySlots)
+    business: Business;
 }

@@ -1,9 +1,15 @@
+import { OrderItem } from "./orderItem.entity";
+import { Review } from "./review.entity";
+import { Collection } from "./collection.entity";
+import { Business } from "./business.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToMany,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, MaxLength, IsDecimal, IsUrl, IsInt } from "class-validator";
 
@@ -63,4 +69,15 @@ export class Item {
     quantity: number;
 
     // --- relations ---
+    @OneToMany(() => OrderItem, (orderItem) => orderItem.item)
+    orderItems: OrderItem[];
+
+    @OneToMany(() => Review, (review) => review.item)
+    reviews: Review[];
+
+    @ManyToOne(() => Collection, (collection) => collection.items)
+    collection: Collection;
+
+    @ManyToOne(() => Business, (business) => business.items)
+    business: Business;
 }

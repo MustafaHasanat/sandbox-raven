@@ -24,26 +24,11 @@
                         "maxLength": 25
                     }
                 },
-                "email": {
-                    "type": "string",
-                    "description": "",
-                    "validations": {
-                        "isRequired": true,
-                        "isEmail": true
-                    }
-                },
                 "avatar": {
                     "type": "string",
                     "description": "",
                     "validations": {
                         "isUrl": true
-                    }
-                },
-                "role": {
-                    "type": "enum",
-                    "description": "",
-                    "validations": {
-                        "enum": "userRole"
                     }
                 }
             },

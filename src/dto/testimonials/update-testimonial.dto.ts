@@ -15,4 +15,17 @@ export class UpdateTestimonialDto extends PartialType(CreateTestimonialDto) {
     status?: BusinessStatus;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related user ID",
+    })
+    user?: string;
 }

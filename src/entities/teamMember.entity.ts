@@ -1,9 +1,11 @@
+import { Business } from "./business.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, MaxLength, IsUrl } from "class-validator";
 
@@ -55,4 +57,6 @@ export class TeamMember {
     role: string;
 
     // --- relations ---
+    @ManyToOne(() => Business, (business) => business.teamMembers)
+    business: Business;
 }

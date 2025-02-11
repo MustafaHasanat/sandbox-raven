@@ -6,7 +6,7 @@ import { BusinessesController } from "./businesses.controller";
 import { Business } from "src/entities/business.entity";
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Business])],
+    imports: [, TypeOrmModule.forFeature([Business])],
     controllers: [BusinessesController],
     providers: [BusinessesService],
     exports: [BusinessesService],

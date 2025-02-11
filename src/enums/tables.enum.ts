@@ -1,3 +1,13 @@
+export enum UserFields {
+    ID = "id",
+    CREATED_AT = "createdAt",
+    UPDATED_AT = "updatedAt",
+
+    FIRST_NAME = "firstName",
+    LAST_NAME = "lastName",
+    AVATAR = "avatar",
+}
+
 export enum BusinessFields {
     ID = "id",
     CREATED_AT = "createdAt",
@@ -151,6 +161,7 @@ export enum UserFields {
 }
 
 export enum TablesNames {
+    USER = "user",
     BUSINESS = "business",
     ITEM = "item",
     COLLECTION = "collection",
@@ -171,6 +182,7 @@ export enum TablesNames {
 }
 
 export type AllTablesColumns =
+    | UserFields
     | BusinessFields
     | ItemFields
     | CollectionFields

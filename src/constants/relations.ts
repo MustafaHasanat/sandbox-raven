@@ -6,6 +6,7 @@ type RelationsListing = {
 };
 
 type Tables<T> = {
+    user: T;
     business: T;
     item: T;
     collection: T;
@@ -24,6 +25,12 @@ type Tables<T> = {
 };
 
 const RELATIONS: Tables<RelationsListing> = {
+    user: {
+        oneToOne: [],
+        oneToMany: [],
+        manyToOne: [],
+        manyToMany: [],
+    },
     business: {
         oneToOne: [],
         oneToMany: [],
@@ -121,6 +128,14 @@ export const RELATIONS_OBJECT: Tables<{
     descendants: string[];
 }> = {
     // --- app relations ---
+    user: {
+        descendants: [
+            ...RELATIONS.user.oneToMany,
+            ...RELATIONS.user.manyToOne,
+            ...RELATIONS.user.manyToMany,
+        ],
+        ascendants: [...RELATIONS.user.manyToOne, ...RELATIONS.user.manyToMany],
+    },
     business: {
         descendants: [
             ...RELATIONS.business.oneToMany,

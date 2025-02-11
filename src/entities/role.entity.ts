@@ -32,6 +32,7 @@ export class Role {
     name: string;
 
     // --- relations ---
+
     @OneToMany(() => Permission, (permission) => permission.role)
     permissions: Permission[];
 }

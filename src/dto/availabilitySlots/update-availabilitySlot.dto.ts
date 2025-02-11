@@ -21,4 +21,11 @@ export class UpdateAvailabilitySlotDto extends PartialType(
     endTime?: Date;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

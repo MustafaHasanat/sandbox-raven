@@ -12,4 +12,10 @@ export class CreateCollectionDto {
     name: string;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
 }

@@ -1,9 +1,11 @@
+import { Business } from "./business.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID } from "class-validator";
 
@@ -30,4 +32,6 @@ export class Discount {
     percent: number;
 
     // --- relations ---
+    @ManyToOne(() => Business, (business) => business.discounts)
+    business: Business;
 }

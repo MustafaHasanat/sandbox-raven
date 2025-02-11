@@ -6,6 +6,7 @@ import { TablesNames } from "../../enums/tables.enum";
 
 export class UpdatePermissionDto extends PartialType(CreatePermissionDto) {
     // --- Original fields ---
+
     @ApiProperty({ required: false })
     description?: string;
 
@@ -24,6 +25,7 @@ export class UpdatePermissionDto extends PartialType(CreatePermissionDto) {
     table?: TablesNames;
 
     // --- Relational fields ---
+
     @ApiProperty({
         required: false,
         description: "enter the related role ID",

@@ -23,4 +23,12 @@ export class CreateTestimonialDto {
     status?: BusinessStatus;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
+    @ApiProperty({ required: true, description: "enter the related user ID" })
+    user: string;
 }

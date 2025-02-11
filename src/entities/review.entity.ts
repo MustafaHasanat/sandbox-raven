@@ -1,9 +1,13 @@
+import { Item } from "./item.entity";
+import { Business } from "./business.entity";
+import { User } from "./user.entity";
 import {
     Entity,
     Column,
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToOne,
 } from "typeorm";
 import { IsUUID, MaxLength, IsInt, IsUrl } from "class-validator";
 
@@ -47,4 +51,12 @@ export class Review {
     image: string;
 
     // --- relations ---
+    @ManyToOne(() => Item, (item) => item.reviews)
+    item: Item;
+
+    @ManyToOne(() => Business, (business) => business.reviews)
+    business: Business;
+
+    @ManyToOne(() => User, (user) => user.reviews)
+    user: User;
 }

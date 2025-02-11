@@ -30,4 +30,10 @@ export class CreateAvailabilitySlotDto {
     endTime: Date;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
 }

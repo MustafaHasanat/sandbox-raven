@@ -7,6 +7,19 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
 } from "typeorm";
+import { OrderItem } from "./orderItem.entity";
+import { Order } from "./order.entity";
+import { Review } from "./review.entity";
+import { Testimonial } from "./testimonial.entity";
+import {
+    Entity,
+    Column,
+    CreateDateColumn,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+    OneToMany,
+} from "typeorm";
+import { IsUUID, MaxLength, IsUrl } from "class-validator";
 
 @Entity()
 export class User {
@@ -59,5 +72,41 @@ export class User {
     })
     token?: string;
 
+    @MaxLength(25)
+    @Column({
+        type: "text",
+        nullable: false,
+        comment: "",
+    })
+    firstName: string;
+
+    @MaxLength(25)
+    @Column({
+        type: "text",
+        nullable: false,
+        comment: "",
+    })
+    lastName: string;
+
+    @IsUrl()
+    @Column({
+        type: "text",
+        nullable: true,
+        comment: "",
+    })
+    avatar?: string;
+
     // --- relations ---
+
+    @OneToMany(() => OrderItem, (orderItem) => orderItem.user)
+    orderItems: OrderItem[];
+
+    @OneToMany(() => Order, (order) => order.user)
+    orders: Order[];
+
+    @OneToMany(() => Review, (review) => review.user)
+    reviews: Review[];
+
+    @OneToMany(() => Testimonial, (testimonial) => testimonial.user)
+    testimonials: Testimonial[];
 }
