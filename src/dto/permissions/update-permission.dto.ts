@@ -1,8 +1,8 @@
 import { ApiProperty, PartialType } from "@nestjs/swagger";
 import { CreatePermissionDto } from "./create-permission.dto";
 import { PermissionAction } from "../../enums/permissions.enum";
-import { IsEnum } from "class-validator";
 import { TablesNames } from "../../enums/tables.enum";
+import { IsOptional, IsEnum } from "class-validator";
 
 export class UpdatePermissionDto extends PartialType(CreatePermissionDto) {
     // --- Original fields ---

@@ -43,6 +43,11 @@ export class CreateItemDto {
 
     @ApiProperty({
         required: true,
+        description: "enter the related discount ID",
+    })
+    discount: string;
+    @ApiProperty({
+        required: true,
         description: "enter the related collection ID",
     })
     collection: string;

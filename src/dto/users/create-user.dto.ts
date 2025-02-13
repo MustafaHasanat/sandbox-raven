@@ -1,5 +1,8 @@
 import { ApiProperty, IntersectionType } from "@nestjs/swagger";
+import { LoginUserDto } from "./login-user.dto";
+import { UserRole } from "src/enums/users.enum";
 import {
+    MaxLength,
     IsNotEmpty,
     Length,
     IsEnum,
@@ -7,9 +10,6 @@ import {
     IsAlphanumeric,
     NotContains,
 } from "class-validator";
-import { LoginUserDto } from "./login-user.dto";
-import { UserRole } from "src/enums/users.enum";
-import { MaxLength, IsUrl } from "class-validator";
 
 export class CreateUserDto extends IntersectionType(LoginUserDto) {
     // --- Original fields ---
@@ -46,6 +46,7 @@ export class CreateUserDto extends IntersectionType(LoginUserDto) {
     avatar?: Express.Multer.File;
 
     // --- Additional fields ---
+
     @ApiProperty({
         example: "",
         description: "provide the app secret to create a new admin",
@@ -57,6 +58,8 @@ export class CreateUserDto extends IntersectionType(LoginUserDto) {
     @ApiProperty({
         required: true,
         description: "",
+        default: "123",
+        example: "123",
     })
     firstName: string;
 
@@ -64,15 +67,16 @@ export class CreateUserDto extends IntersectionType(LoginUserDto) {
     @ApiProperty({
         required: true,
         description: "",
+        default: "test",
+        example: "test",
     })
     lastName: string;
 
-    @IsUrl()
-    @ApiProperty({
-        required: false,
-        description: "",
-    })
-    avatar?: string;
-
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: true,
+        description: "enter the related business ID",
+    })
+    business: string;
 }

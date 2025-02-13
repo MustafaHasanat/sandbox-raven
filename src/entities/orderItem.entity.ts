@@ -10,7 +10,7 @@ import {
     UpdateDateColumn,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, IsInt } from "class-validator";
+import { IsInt, IsUUID } from "class-validator";
 
 @Entity()
 export class OrderItem {

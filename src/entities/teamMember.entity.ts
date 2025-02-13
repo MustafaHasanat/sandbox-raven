@@ -7,7 +7,7 @@ import {
     UpdateDateColumn,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, MaxLength, IsUrl } from "class-validator";
+import { MaxLength, IsUrl, IsUUID } from "class-validator";
 
 @Entity()
 export class TeamMember {

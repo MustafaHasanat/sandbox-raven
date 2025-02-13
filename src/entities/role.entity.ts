@@ -1,13 +1,13 @@
+import { Permission } from "./permission.entity";
 import {
     Entity,
+    Column,
+    CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
-    CreateDateColumn,
-    Column,
     OneToMany,
 } from "typeorm";
 import { IsUUID, Length } from "class-validator";
-import { Permission } from "./permission.entity";
 
 @Entity()
 export class Role {

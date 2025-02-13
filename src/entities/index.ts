@@ -1,4 +1,3 @@
-export { User } from "./user.entity";
 export { Business } from "./business.entity";
 export { Item } from "./item.entity";
 export { Collection } from "./collection.entity";

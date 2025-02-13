@@ -9,7 +9,7 @@ import {
     OneToMany,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, MaxLength, IsDecimal } from "class-validator";
+import { MaxLength, IsDecimal, IsUUID } from "class-validator";
 
 @Entity()
 export class Coupon {

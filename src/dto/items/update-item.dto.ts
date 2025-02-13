@@ -30,6 +30,12 @@ export class UpdateItemDto extends PartialType(CreateItemDto) {
     @ApiProperty({
         required: false,
         default: "",
+        description: "enter the related discount ID",
+    })
+    discount?: string;
+    @ApiProperty({
+        required: false,
+        default: "",
         description: "enter the related collection ID",
     })
     collection?: string;

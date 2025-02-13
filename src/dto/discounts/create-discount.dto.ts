@@ -1,5 +1,4 @@
 import { ApiProperty } from "@nestjs/swagger";
-import {} from "class-validator";
 
 export class CreateDiscountDto {
     // --- Original fields ---

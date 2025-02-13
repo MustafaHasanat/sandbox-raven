@@ -131,4 +131,7 @@ export class CreateBusinessDto {
     whatsapp?: string;
 
     // --- Relational fields ---
+
+    @ApiProperty({ required: true, description: "enter the related user ID" })
+    user: string;
 }

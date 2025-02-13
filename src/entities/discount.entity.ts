@@ -1,4 +1,5 @@
 import { Business } from "./business.entity";
+import { Item } from "./item.entity";
 import {
     Entity,
     Column,

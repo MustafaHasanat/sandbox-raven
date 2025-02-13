@@ -1,15 +1,15 @@
-import {
-    Entity,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn,
-    CreateDateColumn,
-    Column,
-    ManyToOne,
-} from "typeorm";
-import { IsEnum, IsUUID, Length } from "class-validator";
 import { Role } from "./role.entity";
 import { PermissionAction } from "../enums/permissions.enum";
 import { TablesNames } from "../enums/tables.enum";
+import {
+    Entity,
+    Column,
+    CreateDateColumn,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
+    ManyToOne,
+} from "typeorm";
+import { IsUUID, IsEnum, Length } from "class-validator";
 
 @Entity()
 export class Permission {
@@ -25,6 +25,7 @@ export class Permission {
     createdAt: Date;
 
     // --- columns ---
+
     @IsEnum(PermissionAction)
     @Column({
         type: "enum",

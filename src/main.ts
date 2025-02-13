@@ -16,7 +16,7 @@ async function bootstrap() {
     const config = new DocumentBuilder()
         .setTitle("Raven Project DB")
         .setDescription("The API of the Raven Project DB website")
-        .setVersion("1.0")
+        .setVersion("1.0.0")
         .addBearerAuth()
         .build();
     const document = SwaggerModule.createDocument(app, config);

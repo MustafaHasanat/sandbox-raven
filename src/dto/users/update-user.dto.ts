@@ -2,10 +2,10 @@ import { ApiProperty, PartialType } from "@nestjs/swagger";
 import { CreateUserDto } from "./create-user.dto";
 import { UserRole } from "src/enums/users.enum";
 import { IsOptional } from "class-validator";
-import { IsOptional } from "class-validator";
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
     // --- Original fields ---
+
     @IsOptional()
     @ApiProperty({ default: "", example: "", required: false })
     username?: string;
@@ -35,9 +35,12 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
     @ApiProperty({ required: false })
     lastName?: string;
 
-    @IsOptional()
-    @ApiProperty({ required: false })
-    avatar?: string;
-
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related business ID",
+    })
+    business?: string;
 }

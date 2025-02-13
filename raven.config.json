@@ -2,6 +2,7 @@
     "project": {
         "framework": "nest.js",
         "name": "Raven Project",
+        "version": "1.0.0",
         "outDir": "src",
         "debugger": true
     },
@@ -11,6 +12,7 @@
                 "firstName": {
                     "type": "string",
                     "description": "",
+                    "defaultValue": "123",
                     "validations": {
                         "isRequired": true,
                         "maxLength": 25
@@ -19,9 +21,18 @@
                 "lastName": {
                     "type": "string",
                     "description": "",
+                    "defaultValue": "test",
                     "validations": {
                         "isRequired": true,
                         "maxLength": 25
+                    }
+                },
+                "email": {
+                    "type": "string",
+                    "description": "",
+                    "validations": {
+                        "isRequired": true,
+                        "isEmail": true
                     }
                 },
                 "avatar": {
@@ -29,6 +40,13 @@
                     "description": "",
                     "validations": {
                         "isUrl": true
+                    }
+                },
+                "role": {
+                    "type": "enum",
+                    "description": "",
+                    "validations": {
+                        "enum": "userRole"
                     }
                 }
             },

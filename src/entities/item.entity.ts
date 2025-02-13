@@ -1,3 +1,4 @@
+import { Discount } from "./discount.entity";
 import { OrderItem } from "./orderItem.entity";
 import { Review } from "./review.entity";
 import { Collection } from "./collection.entity";
@@ -8,10 +9,12 @@ import {
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    OneToOne,
+    JoinColumn,
     OneToMany,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, MaxLength, IsDecimal, IsUrl, IsInt } from "class-validator";
+import { MaxLength, IsDecimal, IsUrl, IsInt, IsUUID } from "class-validator";
 
 @Entity()
 export class Item {
@@ -69,6 +72,10 @@ export class Item {
     quantity: number;
 
     // --- relations ---
+    @OneToOne(() => Discount)
+    @JoinColumn()
+    discount: Discount;
+
     @OneToMany(() => OrderItem, (orderItem) => orderItem.item)
     orderItems: OrderItem[];
 

@@ -27,6 +27,7 @@ export class CreatePermissionDto {
     description?: string;
 
     // --- Relational fields ---
+
     @ApiProperty({
         required: true,
         description: "enter the related role ID",

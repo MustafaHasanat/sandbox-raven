@@ -8,6 +8,7 @@ import { Discount } from "./discount.entity";
 import { Testimonial } from "./testimonial.entity";
 import { Collection } from "./collection.entity";
 import { Item } from "./item.entity";
+import { User } from "./user.entity";
 import { BusinessTier } from "src/enums/businessTier.enum";
 import { BusinessStatus } from "src/enums/businessStatus.enum";
 import { WebsiteTheme } from "src/enums/websiteTheme.enum";
@@ -18,14 +19,16 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
     OneToMany,
+    ManyToMany,
+    JoinTable,
 } from "typeorm";
 import {
-    IsUUID,
     MaxLength,
     IsLatLong,
     IsUrl,
     IsEnum,
     IsPhoneNumber,
+    IsUUID,
 } from "class-validator";
 
 @Entity()
@@ -207,4 +210,7 @@ export class Business {
 
     @OneToMany(() => Item, (item) => item.business)
     items: Item[];
+
+    @ManyToMany(() => User, (user) => user.businesses)
+    users: User[];
 }

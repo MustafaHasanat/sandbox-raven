@@ -69,4 +69,11 @@ export class UpdateBusinessDto extends PartialType(CreateBusinessDto) {
     whatsapp?: string;
 
     // --- Relational fields ---
+
+    @ApiProperty({
+        required: false,
+        default: "",
+        description: "enter the related user ID",
+    })
+    user?: string;
 }

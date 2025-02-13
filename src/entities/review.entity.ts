@@ -9,7 +9,7 @@ import {
     UpdateDateColumn,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, MaxLength, IsInt, IsUrl } from "class-validator";
+import { MaxLength, IsInt, IsUrl, IsUUID } from "class-validator";
 
 @Entity()
 export class Review {

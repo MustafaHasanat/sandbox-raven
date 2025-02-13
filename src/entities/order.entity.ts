@@ -12,7 +12,7 @@ import {
     OneToMany,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, IsEnum, IsDecimal } from "class-validator";
+import { IsEnum, IsDecimal, IsUUID } from "class-validator";
 
 @Entity()
 export class Order {

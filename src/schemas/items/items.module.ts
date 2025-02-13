@@ -1,5 +1,6 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { DiscountsModule } from "../discounts/discounts.module";
 import { CollectionsModule } from "../collections/collections.module";
 import { BusinessesModule } from "../businesses/businesses.module";
 
@@ -9,6 +10,7 @@ import { Item } from "src/entities/item.entity";
 
 @Module({
     imports: [
+        DiscountsModule,
         CollectionsModule,
         BusinessesModule,
         TypeOrmModule.forFeature([Item]),

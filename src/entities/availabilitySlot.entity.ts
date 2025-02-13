@@ -8,7 +8,7 @@ import {
     UpdateDateColumn,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, IsEnum, IsDate } from "class-validator";
+import { IsEnum, IsDate, IsUUID } from "class-validator";
 
 @Entity()
 export class AvailabilitySlot {

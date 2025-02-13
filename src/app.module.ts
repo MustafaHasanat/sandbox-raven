@@ -1,4 +1,3 @@
-import { UsersModule } from "./schemas/users/users.module";
 import { BusinessesModule } from "./schemas/businesses/businesses.module";
 import { ItemsModule } from "./schemas/items/items.module";
 import { CollectionsModule } from "./schemas/collections/collections.module";
@@ -56,7 +55,6 @@ import entities from "./entities/entities";
         PermissionsModule,
         UsersModule,
         // --- app tables ---
-        UsersModule,
         BusinessesModule,
         ItemsModule,
         CollectionsModule,

@@ -1,12 +1,5 @@
-import { IsEmail, IsEnum, IsUUID, Length, Matches } from "class-validator";
 import { UserRole } from "../enums/users.enum";
-import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    CreateDateColumn,
-    UpdateDateColumn,
-} from "typeorm";
+import { Business } from "./business.entity";
 import { OrderItem } from "./orderItem.entity";
 import { Order } from "./order.entity";
 import { Review } from "./review.entity";
@@ -17,9 +10,18 @@ import {
     CreateDateColumn,
     PrimaryGeneratedColumn,
     UpdateDateColumn,
+    ManyToMany,
+    JoinTable,
     OneToMany,
 } from "typeorm";
-import { IsUUID, MaxLength, IsUrl } from "class-validator";
+import {
+    MaxLength,
+    IsUUID,
+    IsEmail,
+    IsEnum,
+    Matches,
+    Length,
+} from "class-validator";
 
 @Entity()
 export class User {
@@ -77,6 +79,8 @@ export class User {
         type: "text",
         nullable: false,
         comment: "",
+
+        default: "123",
     })
     firstName: string;
 
@@ -85,18 +89,16 @@ export class User {
         type: "text",
         nullable: false,
         comment: "",
+
+        default: "test",
     })
     lastName: string;
 
-    @IsUrl()
-    @Column({
-        type: "text",
-        nullable: true,
-        comment: "",
-    })
-    avatar?: string;
-
     // --- relations ---
+
+    @ManyToMany(() => Business, (business) => business.users)
+    @JoinTable()
+    businesses: Business[];
 
     @OneToMany(() => OrderItem, (orderItem) => orderItem.user)
     orderItems: OrderItem[];

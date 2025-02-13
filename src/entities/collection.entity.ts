@@ -9,7 +9,7 @@ import {
     OneToMany,
     ManyToOne,
 } from "typeorm";
-import { IsUUID, MaxLength } from "class-validator";
+import { MaxLength, IsUUID } from "class-validator";
 
 @Entity()
 export class Collection {
